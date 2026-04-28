@@ -1,22 +1,21 @@
 [
-  {
-    "name": "theme_info",
-    "theme_name": "RALJE Atelier",
-    "theme_version": "2.0.0",
-    "theme_author": "RALJE",
-    "theme_documentation_url": "",
-    "theme_support_url": ""
-  },
-  {
-    "name": "Social media",
-    "settings": [
-      {
-        "type": "text",
-        "id": "social_instagram_link",
-        "label": "Instagram",
-        "default": "https://www.instagram.com/ralje.jewelry/"
-      }
-    ]
-  }
+    {
+          "name": "theme_info",
+          "theme_name": "RALJE Atelier",
+          "theme_version": "2.0.0",
+          "theme_author": "RALJE",
+          "theme_documentation_url": "https://ralje.com",
+          "theme_support_url": "https://ralje.com"
+    },
+    {
+          "name": "Social media",
+          "settings": [
+                  {
+                            "type": "text",
+                            "id": "social_instagram_link",
+                            "label": "Instagram",
+                            "default": "https://www.instagram.com/ralje.jewelry/"
+                  }
+          ]
+    }
 ]
-
