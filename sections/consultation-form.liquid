@@ -1,0 +1,87 @@
+{% comment %}
+  RALJE — Commission a Consultation Form
+{% endcomment %}
+
+<section class="page-section section--ink" id="consultation">
+  <div class="atelier-container">
+
+    <div class="text-center mb-xl">
+      <span class="atelier-label reveal">{{ section.settings.label | default: 'Begin' }}</span>
+      <h2 class="reveal">{{ section.settings.heading | default: 'COMMISSION A CONSULTATION' }}</h2>
+      <hr class="atelier-divider atelier-divider--center reveal">
+      <p class="mx-auto reveal" style="text-align: center; opacity: 0.7;">
+        {{ section.settings.subtitle | default: 'Every piece begins with a conversation. Tell us about the moment this piece will mark.' }}
+      </p>
+    </div>
+
+    <div class="consultation-form reveal">
+      {% form 'contact' %}
+        {% if form.posted_successfully? %}
+          <p class="text-center" style="color: var(--gold);">Your inquiry has been received. The founder will reply within twenty-four hours.</p>
+        {% else %}
+          <div class="form-field">
+            <label for="contact-name">Your Name</label>
+            <input type="text" id="contact-name" name="contact[name]" required>
+          </div>
+          <div class="form-field">
+            <label for="contact-email">Email</label>
+            <input type="email" id="contact-email" name="contact[email]" required>
+          </div>
+          <div class="form-field">
+            <label for="contact-occasion">The Occasion</label>
+            <select id="contact-occasion" name="contact[occasion]">
+              <option value="">Select the moment this piece will mark</option>
+              <option value="Engagement">Engagement</option>
+              <option value="Wedding">Wedding</option>
+              <option value="Anniversary">Anniversary</option>
+              <option value="Birth">Birth or Christening</option>
+              <option value="Inheritance">Inheritance or Heirloom</option>
+              <option value="Milestone">Personal Milestone</option>
+              <option value="Devotion">Devotion or Religious</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="contact-body">Tell us about the piece you envision</label>
+            <textarea id="contact-body" name="contact[body]"></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="atelier-btn atelier-btn--bordered">Send Inquiry</button>
+          </div>
+        {% endif %}
+      {% endform %}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Consultation Form",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Section Label",
+      "default": "Begin"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "COMMISSION A CONSULTATION"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Every piece begins with a conversation. Tell us about the moment this piece will mark."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Consultation Form"
+    }
+  ]
+}
+{% endschema %}

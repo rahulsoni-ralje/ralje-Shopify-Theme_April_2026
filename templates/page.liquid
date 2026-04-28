@@ -1,0 +1,16 @@
+{% comment %}
+  RALJE — Default Page Template
+{% endcomment %}
+
+<section class="chapter-header">
+  <p class="chapter-header__label reveal">{{ page.title }}</p>
+  <h1 class="chapter-header__title reveal">{{ page.title | upcase }}</h1>
+</section>
+
+<section class="page-section section--bone">
+  <div class="atelier-container atelier-prose">
+    <div class="reveal" style="color: var(--ink);">
+      {{ page.content }}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,99 @@
+{% comment %}
+  RALJE — Philosophy / Four Foundations Section
+{% endcomment %}
+
+<section class="page-section section--bone" id="philosophy">
+  <div class="atelier-container">
+
+    <div class="text-center mb-xl">
+      <span class="atelier-label reveal">{{ section.settings.label | default: 'The Essence' }}</span>
+      <h2 class="reveal">{{ section.settings.heading | default: 'WHAT WE STAND ON' }}</h2>
+      <hr class="atelier-divider atelier-divider--center reveal">
+    </div>
+
+    <div class="foundation-grid">
+      {% for block in section.blocks %}
+        <div class="foundation-card reveal" {{ block.shopify_attributes }}>
+          <p class="foundation-card__name">{{ block.settings.name }}</p>
+          <p class="foundation-card__desc">{{ block.settings.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Philosophy — Foundations",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Section Label",
+      "default": "The Essence"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "WHAT WE STAND ON"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "foundation",
+      "name": "Foundation",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Foundation Name",
+          "default": "Heritage"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Four generations of goldsmithing from Rajasthan, India."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Philosophy — Foundations",
+      "blocks": [
+        {
+          "type": "foundation",
+          "settings": {
+            "name": "Heritage",
+            "description": "Four generations of goldsmithing experience from Rajasthan, India — the historical centre of jewelled arts. This is not a marketing story; it is the reason we can work across Polki, Kundan, Meenakari, Thewa, and modern techniques with equal fluency."
+          }
+        },
+        {
+          "type": "foundation",
+          "settings": {
+            "name": "Innovation",
+            "description": "Heritage without innovation is a museum. RALJE bridges traditional Rajasthani craft with modern technology — 3D jewellery design, photorealistic rendering, precision casting. The client sees the piece before it exists."
+          }
+        },
+        {
+          "type": "foundation",
+          "settings": {
+            "name": "Personalisation",
+            "description": "There is no catalogue. There is no showroom floor. Every RALJE piece is designed around a specific person and a specific moment. The consultation ensures we understand both deeply."
+          }
+        },
+        {
+          "type": "foundation",
+          "settings": {
+            "name": "Legacy",
+            "description": "The finished piece is not a product. It is a legacy object — something the client will wear, pass down, and attach meaning to for generations."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

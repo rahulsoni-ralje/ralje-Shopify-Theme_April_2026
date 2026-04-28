@@ -1,0 +1,57 @@
+{% comment %}
+  RALJE — Commission Page
+{% endcomment %}
+
+<section class="chapter-header">
+  <p class="chapter-header__label reveal">Begin</p>
+  <h1 class="chapter-header__title reveal">COMMISSION A CONSULTATION</h1>
+  <p class="chapter-header__subtitle reveal">Every piece begins with a conversation.</p>
+</section>
+
+<section class="page-section section--ink">
+  <div class="atelier-container">
+    <div class="consultation-form reveal">
+      {% form 'contact' %}
+        {% if form.posted_successfully? %}
+          <p class="text-center" style="color: var(--gold); font-size: 1.25rem;">
+            Your inquiry has been received. The founder will reply within twenty-four hours.
+          </p>
+        {% else %}
+          <div class="form-field">
+            <label for="contact-name">Your Name</label>
+            <input type="text" id="contact-name" name="contact[name]" required>
+          </div>
+          <div class="form-field">
+            <label for="contact-email">Email</label>
+            <input type="email" id="contact-email" name="contact[email]" required>
+          </div>
+          <div class="form-field">
+            <label for="contact-phone">Phone (optional)</label>
+            <input type="tel" id="contact-phone" name="contact[phone]">
+          </div>
+          <div class="form-field">
+            <label for="contact-occasion">The Occasion</label>
+            <select id="contact-occasion" name="contact[occasion]">
+              <option value="">Select the moment this piece will mark</option>
+              <option value="Engagement">Engagement</option>
+              <option value="Wedding">Wedding</option>
+              <option value="Anniversary">Anniversary</option>
+              <option value="Birth">Birth or Christening</option>
+              <option value="Inheritance">Inheritance or Heirloom</option>
+              <option value="Milestone">Personal Milestone</option>
+              <option value="Devotion">Devotion or Religious</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="contact-body">Tell us about the piece you envision</label>
+            <textarea id="contact-body" name="contact[body]" placeholder="The story behind the moment, the person who will wear it, any ideas or inspirations you carry..."></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="atelier-btn atelier-btn--bordered">Send Inquiry</button>
+          </div>
+        {% endif %}
+      {% endform %}
+    </div>
+  </div>
+</section>

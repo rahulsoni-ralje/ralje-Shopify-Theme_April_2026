@@ -1,0 +1,153 @@
+{% comment %}
+  RALJE — The Process / Six Ceremonies
+{% endcomment %}
+
+<section class="page-section section--parchment" id="process">
+  <div class="atelier-container">
+
+    <div class="text-center mb-xl">
+      <span class="atelier-label reveal">{{ section.settings.label | default: 'The Piece Journey' }}</span>
+      <h2 class="reveal">{{ section.settings.heading | default: 'SIX CEREMONIES' }}</h2>
+      <hr class="atelier-divider atelier-divider--center reveal">
+      <p class="mx-auto reveal" style="text-align: center; opacity: 0.7;">
+        {{ section.settings.subtitle | default: 'A piece passes through six ceremonies, from the first message to the anniversary of its wearing.' }}
+      </p>
+    </div>
+
+    <div class="ceremony-timeline">
+      {% for block in section.blocks %}
+        <div class="ceremony reveal" {{ block.shopify_attributes }}>
+          <p class="ceremony__numeral">{{ block.settings.numeral }}</p>
+          <p class="ceremony__name">{{ block.settings.name }}</p>
+          <p class="ceremony__desc">{{ block.settings.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="text-center mt-xl">
+      <a href="{{ section.settings.cta_link | default: '/pages/commission' }}" class="atelier-btn atelier-btn--gold reveal">
+        {{ section.settings.cta_text | default: 'Begin the Conversation' }}
+      </a>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Process — Six Ceremonies",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Section Label",
+      "default": "The Piece Journey"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "SIX CEREMONIES"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "A piece passes through six ceremonies, from the first message to the anniversary of its wearing."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Text",
+      "default": "Begin the Conversation"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Link",
+      "default": "/pages/commission"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ceremony",
+      "name": "Ceremony",
+      "settings": [
+        {
+          "type": "text",
+          "id": "numeral",
+          "label": "Roman Numeral",
+          "default": "I"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Ceremony Name",
+          "default": "The Inquiry"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "A message arrives. Within twenty-four hours, the founder replies in first person."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Process — Six Ceremonies",
+      "blocks": [
+        {
+          "type": "ceremony",
+          "settings": {
+            "numeral": "I",
+            "name": "The Inquiry",
+            "description": "A message arrives — on Instagram, by email, through the site. Within twenty-four hours, the founder replies in first person. The reply asks a single serious question: what is the piece for?"
+          }
+        },
+        {
+          "type": "ceremony",
+          "settings": {
+            "numeral": "II",
+            "name": "The Consultation",
+            "description": "A scheduled conversation, voice or in person. The founder listens more than he speaks. By the end, three things exist: a written brief, a budget range, a date the piece must be ready."
+          }
+        },
+        {
+          "type": "ceremony",
+          "settings": {
+            "numeral": "III",
+            "name": "The Vision",
+            "description": "A photo-real 3D rendering of the chosen direction, lit as the piece will wear. The client signs the Vision — literally, by reply — before any metal is cut."
+          }
+        },
+        {
+          "type": "ceremony",
+          "settings": {
+            "numeral": "IV",
+            "name": "The Craft",
+            "description": "The silence phase. The approved design is sent to the workshop with complete specifications. The piece is cast, set, finished, marked."
+          }
+        },
+        {
+          "type": "ceremony",
+          "settings": {
+            "numeral": "V",
+            "name": "The Delivery",
+            "description": "The piece arrives in the RALJE box, sealed with wax, accompanied by the certificate and the founder's letter — handwritten."
+          }
+        },
+        {
+          "type": "ceremony",
+          "settings": {
+            "numeral": "VI",
+            "name": "The Aftercare",
+            "description": "One year after delivery, the client receives a single letter from the founder — no sales offer, no upsell. A question about the piece's first year."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,28 @@
+{% comment %}
+  RALJE — Site Footer
+  Wordmark, tagline, navigation links, legal line.
+{% endcomment %}
+
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer__inner">
+
+    <p class="site-footer__mark">RALJE</p>
+    <p class="site-footer__tagline">House of the Fourth — A private atelier, by consultation only.</p>
+
+    <ul class="site-footer__nav">
+      {% for link in linklists.main-menu.links %}
+        <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+      {% endfor %}
+    </ul>
+
+    <p class="site-footer__legal">&copy; {{ 'now' | date: '%Y' }} RALJE Atelier. All rights reserved.</p>
+
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": []
+}
+{% endschema %}

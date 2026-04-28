@@ -1,0 +1,89 @@
+{% comment %}
+  RALJE — Legacies Gallery
+  Past commissions displayed as a gallery. No prices, ever.
+{% endcomment %}
+
+<section class="page-section section--ink" id="legacies">
+  <div class="atelier-container">
+
+    <div class="text-center mb-xl">
+      <span class="atelier-label reveal">{{ section.settings.label | default: 'The Archive' }}</span>
+      <h2 class="reveal">{{ section.settings.heading | default: 'LEGACIES' }}</h2>
+      <hr class="atelier-divider atelier-divider--center reveal">
+      <p class="mx-auto reveal" style="text-align: center; opacity: 0.7;">
+        {{ section.settings.subtitle | default: 'Pieces that have left the atelier. Each one made for a single person, a single moment.' }}
+      </p>
+    </div>
+
+    <div class="legacies-grid">
+      {% for block in section.blocks %}
+        <div class="legacy-card reveal" {{ block.shopify_attributes }}>
+          {% if block.settings.image != blank %}
+            {{ block.settings.image | image_url: width: 800 | image_tag: loading: 'lazy' }}
+          {% endif %}
+          <div class="legacy-card__info">
+            <p class="legacy-card__number">{{ block.settings.piece_number }}</p>
+            <p class="legacy-card__name">{{ block.settings.piece_name }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Legacies — Gallery",
+  "settings": [
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Section Label",
+      "default": "The Archive"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "LEGACIES"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Pieces that have left the atelier. Each one made for a single person, a single moment."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "piece",
+      "name": "Legacy Piece",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Piece Image"
+        },
+        {
+          "type": "text",
+          "id": "piece_number",
+          "label": "Piece Number",
+          "default": "Piece No. 001"
+        },
+        {
+          "type": "text",
+          "id": "piece_name",
+          "label": "Piece Name",
+          "default": "The First Ring"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Legacies — Gallery"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,33 @@
+{% comment %}
+  RALJE — Site Header / Navigation
+  Fixed top bar with wordmark and navigation links.
+{% endcomment %}
+
+<header class="site-header" role="banner">
+  <div class="site-header__inner">
+
+    <div class="site-header__logo">
+      <a href="/">RALJE</a>
+    </div>
+
+    <button class="site-header__toggle" aria-label="Menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="site-header__nav" role="navigation" aria-label="Main">
+      {% for link in linklists.main-menu.links %}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      {% endfor %}
+    </nav>
+
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": []
+}
+{% endschema %}
