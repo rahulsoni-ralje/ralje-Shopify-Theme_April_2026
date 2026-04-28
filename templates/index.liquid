@@ -1,9 +1,80 @@
 {% comment %}
   RALJE — Homepage
-  Sections: Hero, Philosophy, Legacies, Process
+  Hero and Process inlined. Philosophy and Legacies load as sections.
 {% endcomment %}
 
-{% section 'hero' %}
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero__media">
+    <div class="hero__overlay"></div>
+  </div>
+  <div class="hero__content">
+    <h1 class="hero__title reveal">RALJE</h1>
+    <p class="hero__subtitle reveal">Your story, set in gold.</p>
+    <a href="/pages/commission" class="atelier-btn atelier-btn--bordered reveal">
+      Commission a Consultation
+    </a>
+  </div>
+  <div class="hero__scroll reveal">Descend</div>
+</section>
+
+<!-- PHILOSOPHY -->
 {% section 'philosophy' %}
+
+<!-- LEGACIES -->
 {% section 'legacies-gallery' %}
-{% section 'process' %}
+
+<!-- PROCESS / SIX CEREMONIES -->
+<section class="page-section section--parchment" id="process">
+  <div class="atelier-container">
+
+    <div class="text-center mb-xl">
+      <span class="atelier-label reveal">The Piece Journey</span>
+      <h2 class="reveal" style="color: var(--ink);">SIX CEREMONIES</h2>
+      <hr class="atelier-divider atelier-divider--center reveal">
+      <p class="mx-auto reveal" style="text-align: center; color: var(--ink); opacity: 0.7;">
+        A piece passes through six ceremonies, from the first message to the anniversary of its wearing.
+      </p>
+    </div>
+
+    <div class="ceremony-timeline">
+      <div class="ceremony reveal">
+        <p class="ceremony__numeral" style="color: var(--gold);">I</p>
+        <p class="ceremony__name" style="color: var(--ink);">The Inquiry</p>
+        <p class="ceremony__desc" style="color: var(--ink);">A message arrives — on Instagram, by email, through the site. Within twenty-four hours, the founder replies in first person. The reply asks a single serious question: what is the piece for?</p>
+      </div>
+      <div class="ceremony reveal">
+        <p class="ceremony__numeral" style="color: var(--gold);">II</p>
+        <p class="ceremony__name" style="color: var(--ink);">The Consultation</p>
+        <p class="ceremony__desc" style="color: var(--ink);">A scheduled conversation, voice or in person. The founder listens more than he speaks. By the end, three things exist: a written brief, a budget range, a date the piece must be ready.</p>
+      </div>
+      <div class="ceremony reveal">
+        <p class="ceremony__numeral" style="color: var(--gold);">III</p>
+        <p class="ceremony__name" style="color: var(--ink);">The Vision</p>
+        <p class="ceremony__desc" style="color: var(--ink);">A photo-real 3D rendering of the chosen direction, lit as the piece will wear. The client signs the Vision — literally, by reply — before any metal is cut.</p>
+      </div>
+      <div class="ceremony reveal">
+        <p class="ceremony__numeral" style="color: var(--gold);">IV</p>
+        <p class="ceremony__name" style="color: var(--ink);">The Craft</p>
+        <p class="ceremony__desc" style="color: var(--ink);">The silence phase. The approved design is sent to the workshop with complete specifications. The piece is cast, set, finished, marked.</p>
+      </div>
+      <div class="ceremony reveal">
+        <p class="ceremony__numeral" style="color: var(--gold);">V</p>
+        <p class="ceremony__name" style="color: var(--ink);">The Delivery</p>
+        <p class="ceremony__desc" style="color: var(--ink);">The piece arrives in the RALJE box, sealed with wax, accompanied by the certificate and the founder's handwritten letter.</p>
+      </div>
+      <div class="ceremony reveal">
+        <p class="ceremony__numeral" style="color: var(--gold);">VI</p>
+        <p class="ceremony__name" style="color: var(--ink);">The Aftercare</p>
+        <p class="ceremony__desc" style="color: var(--ink);">One year after delivery, the client receives a single letter from the founder — no sales offer, no upsell. A question about the piece's first year.</p>
+      </div>
+    </div>
+
+    <div class="text-center mt-xl">
+      <a href="/pages/commission" class="atelier-btn atelier-btn--gold reveal">
+        Begin the Conversation
+      </a>
+    </div>
+
+  </div>
+</section>
